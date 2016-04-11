@@ -7,9 +7,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="./css/CSSReset.css">
 	<link rel="stylesheet" href="./css/CSSAnimate.css">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<style>
 		html{height:100%;overflow:hidden;}
-		body{background:#000;font:12px arial;margin:0;height:100%;overflow:auto;}
+		body{position:relative;background:#000;font:12px arial;margin:0;height:100%;overflow:hidden;}
 		.loginBg{
 			background:#c7ffec url("./images/loginBg.jpg") center 0 no-repeat fixed;
 			background-size:cover;
@@ -29,11 +30,72 @@
 			height: 100%;
 			background-size: cover;
 		}
+		.loginWrap{
+			position: absolute;
+			top:18%;
+			left:0;
+			width: 100%;
+		}
+		.loginWrap .logo{margin:0 auto;width:333px;}
+
+		.content .control{margin:0 auto;width:584px;height:56px;background:rgba(17,17,17,0.5);
+			color:rgba(255,255,255,0.5);
+		}
+		.content{padding:30px;}
+		.content .control .controlBtn{
+			display:inline-block;
+			width:292px;
+			height:56px;
+			color:rgba(255,255,255,0.5);
+			float:left;
+			text-decoration:none;
+			text-align:center;
+			line-height:56px;
+			font-size: 24px;
+    		letter-spacing: 4px;
+		}
+		.content .control .active{
+			background:#fff;
+			color:#444;
+		}
+		.form-content{
+			width:584px;margin:0 auto;padding:30px;background:rgba(255, 255,255,0.75);
+		}
+		.btn, .control-label{font-size:18px;}
+
 	</style>
 </head>
 <body>
 	<div class="loginBg animated swing"></div>
 	<div id="J_loginBgCanvas" class="loginBgCanvas"></div>
+	<div class="loginWrap animated fadeInUp">
+		<div class="logo">
+			<img src="./images/ifeLogo.png" alt="iFE社交平台" title="iFE社交平台" width="333" height="122" />
+		</div>
+		<div class="content">
+			<div class="control">
+				<a class="controlBtn active" href="javascript:void(0);">注册</a>
+				<a class="controlBtn" href="javascript:void(0);">登录</a>
+			</div>
+			<div class="form-content">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="exampleInputName2">Email：</label>
+						<div class="col-sm-10">
+					      <input type="email" id="exampleInputName2" class="col-sm-10 form-control" placeholder="请输入邮箱">
+					    </div>
+	  				</div>
+		  			<div class="form-group">
+		  				<label class="col-sm-2 control-label" for="exampleInputEmail2">密码：</label>
+		  				<div class="col-sm-10">
+					      <input type="password" class="col-sm-10 form-control" id="exampleInputEmail2" placeholder="请输入密码">
+					    </div>
+					</div>
+					<a href="javascript:void(0);" class="btn btn-info btn-block">注册</a>
+				</form>
+			</div>
+		</div>
+	</div>
 	<script src="js/particles.min.js"></script>
 	<script type="text/javascript">
 		particlesJS("J_loginBgCanvas", {
